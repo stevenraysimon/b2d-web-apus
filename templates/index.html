@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to Word</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>
+    <h1>HTML to Word</h1>
+    <label>Choose HTML File</label>
+    <input type="file" id="fileInput" multiple>
+    <label>Choose Banner File</label>
+    <input type="file" id="imageInput" accept="image/*" onchange="showImagePreview()">
+    <div id="imagePreviewDiv" class="hidden">
+        <img id="imagePreview" src="" alt="Banner Preview">
+    </div>
+    <label>
+        <input type="checkbox" id="overviewCheckbox">
+        Overview Page
+    </label>
+    <button onclick="uploadFiles()" id="upload">Upload</button>
+    <div id="contentDiv"></div>
+    <button onclick="downloadContent()">Download as Word</button>
+    <button onclick="clearContent()" id="clear">Clear Content</button> <!-- New button -->
+</body>
+</html>
